@@ -27,24 +27,3 @@ auto taskFuture = th.enqueue([&](){
 auto ret = taskFuture.get();
 ```
 
-
-JsPromise example
-
-```c++
-ThreadPool tp;
-JsPromise::initLib(&tp);
-
-auto prom = new JsPromise([](){
-  //do something
-});
-
-prom.then([](){
-  //do more things
-}).then([](){
-  //and do more things
-});
-
-prom.finalize();
-
-
-```
