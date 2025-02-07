@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <memory>
+#include <atomic>
 #include <thread>
 #include <mutex>
 #include <condition_variable>
@@ -50,7 +51,7 @@ private:
     int tasksCounter = 0;
     int threadCount = 0;
     int maxThreads = 0;
-    int currentBusyThreads = 0;
+    atomic<int> currentBusyThreads;
     int poolPriority = 0;
     int schedul_policy = SCHED_OTHER;
     //this variable is used to determine if new trheads mus be created...

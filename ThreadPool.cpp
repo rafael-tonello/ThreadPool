@@ -25,6 +25,7 @@ ThreadPool::ThreadPool(
     this->threadsNames = name_max_15chars;
     this->maxThreads = threads;
     this->poolPriority = niceValue;
+    this->currentBusyThreads = 0;
 
     if(forceThreadCreationAtStartup)
     {
@@ -48,6 +49,7 @@ ThreadPool::ThreadPool(
     this->threadsNames = name_max_15chars;
     this->maxThreads = threads;
     this->poolPriority = priorityOrNiceValue;
+    this->currentBusyThreads = 0;
 
     if(forceThreadCreationAtStartup)
     {
