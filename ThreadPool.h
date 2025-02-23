@@ -48,8 +48,8 @@ public:
 private:
     string threadsNames;
     unsigned int doneTasks = 0;
-    int tasksCounter = 0;
-    int threadCount = 0;
+    atomic<int> tasksCounter;
+    atomic<int> threadCount;
     int maxThreads = 0;
     atomic<int> currentBusyThreads;
     int poolPriority = 0;

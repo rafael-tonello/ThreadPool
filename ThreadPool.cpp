@@ -34,6 +34,10 @@ ThreadPool::ThreadPool(
             this->NewThread();
         }
     }
+
+    currentBusyThreads = 0;
+    tasksCounter = 0;
+    threadCount = 0;
 }
 
 ThreadPool::ThreadPool(
@@ -135,7 +139,6 @@ void ThreadPool::NewThread()
     this->threadCount++;
 
     this->newThreadMutex.unlock();
-
 }
 
 int ThreadPool::getTotalDoneTasks()
